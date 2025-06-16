@@ -34,13 +34,13 @@ async def handle_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
    • YouTube Shorts
 
 🔹 <b>Как использовать:</b>
-Просто отправьте мне ссылку на видео!
+Отправь URL на видео!
 
 🔹 <b>Система подписок:</b>
-Вы можете подписаться на других пользователей с помощью /subscribe
+Вы можете подписаться на других пользователей с помощью /subscribe @username
 Когда они отправляют видео - вы тоже его получите!
-
-📌 Используйте /help для списка команд
+Если вас кто то доебал своими видео, то отписаться с помощью /unsubscribe @username
+📌 /help для дебилов
 """
     await update.message.reply_text(welcome_text, parse_mode="HTML")
 
@@ -52,7 +52,7 @@ async def list_users(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     user_list = "\n".join([f"• @{user}" for user in users])
-    await update.message.reply_text(f"👥 <b>Зарегистрированные пользователи:</b>\n{user_list}", parse_mode="HTML")
+    await update.message.reply_text(f"👥 <b>Список троглодитов:</b>\n{user_list}", parse_mode="HTML")
 
 
 def get_base_handlers():
